@@ -1,8 +1,9 @@
-﻿using System;
-using System.Windows.Forms;
-using PatientManagementSystem.Data;
+﻿using PatientManagementSystem.Data;
 using PatientManagementSystem.Helpers;
 using PatientManagementSystem.Models;
+using System;
+using System.Windows.Forms;
+using WinFormsApp2.Extensions;
 
 namespace PatientManagementSystem.Forms
 {
@@ -216,7 +217,8 @@ namespace PatientManagementSystem.Forms
                 return false;
             }
 
-            if (!ValidationHelper.IsValidPhone(txtPhone.Text))
+
+            if (!txtPhone.Text.IsMobileNumber())
             {
                 ValidationHelper.ShowValidationError ("شماره تلفن نامعتبر است" );
                 txtPhone.Focus();
